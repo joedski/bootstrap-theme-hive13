@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "test": "brunch watch -s",
-    "build": "node node_modules/less/bin/lessc --include-path=\"bower_components/bootstrap/less:src\" src/bootstrap-hive13.less dist/bootstrap-hive13.css"
+    "build": "node node_modules/less/bin/lessc --source-map --include-path=\"bower_components/bootstrap/less:src\" src/bootstrap-hive13.less dist/bootstrap-hive13.css"
   },
   "keywords": [
     "bootstrap",
