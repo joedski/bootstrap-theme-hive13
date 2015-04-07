@@ -4,3 +4,54 @@
 .navbar {
 	font-family: @font-family-headline;
 }
+
+.body-with-navbar-fixed-top {
+	margin-top: @navbar-height;
+}
+
+.jumbotron {
+	padding-top: 360px;
+	
+	h1 {
+		font-weight: 900;
+	}
+}
+
+/**
+ * Panel!
+ */
+
+.panel {
+	margin-bottom: @line-height-computed * 1.5;
+	.box-shadow(0 0 0 rgba(0,0,0,0));
+	border-width: 0 0 6px;
+}
+
+.panel-title + .panel-title {
+	margin-top: @line-height-computed * 0.75;
+}
+
+h3.panel-title {
+	font-size: @font-size-h3;
+}
+
+h4.panel-title {
+	font-size: @font-size-base;
+	font-family: @font-family-base;
+}
+
+footer {
+	padding: @grid-gutter-width (@grid-gutter-width / 2);
+	background: @brand-primary;
+
+	h3:first-child {
+		margin-top: 0;
+	}
+
+	&.secondary {
+		padding: (@grid-gutter-width / 2);
+		font-size: @font-size-small;
+		background: black;
+		color: white;
+	}
+}

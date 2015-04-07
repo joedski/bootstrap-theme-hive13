@@ -1,11 +1,15 @@
 {
   "name": "bootstrap-theme-hive13",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joedski/bootstrap-theme-hive13.git"
+  },
   "version": "0.0.1",
   "description": "Bootstrap theme for Hive13.",
   "main": "index.js",
   "scripts": {
     "test": "brunch watch -s",
-    "build": "node node_modules/less/bin/lessc --include-path=\"node_modules/bootstrap/less:src\" src/bootstrap-hive13.less dist/bootstrap-hive13.css"
+    "build": "node node_modules/less/bin/lessc --include-path=\"bower_components/bootstrap/less:src\" src/bootstrap-hive13.less dist/bootstrap-hive13.css"
   },
   "keywords": [
     "bootstrap",
@@ -15,14 +19,15 @@
   "author": "Joseph Sikorski",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.4",
-    "less-brunch": "git://github.com/joedski/less-brunch.git#1.8.2",
-    "brunch": "~1.7"
+    "auto-reload-brunch": "^1.7.8",
+    "brunch": "~1.7",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "less-brunch": "git://github.com/joedski/less-brunch.git#1.8.2"
   },
   "options": {
     "less": {
       "paths": [
-        "node_modules/bootstrap/less",
+        "bower_components/bootstrap/less",
         "src"
       ]
     }

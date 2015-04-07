@@ -11,10 +11,14 @@ exports.config =
 
 		assets: [
 			/assets[\\/]/
-			/bower_components[\\/]bootstrap[\\/]dist/
+			# we're not even watching this yet...
+			# /bower_components[\\/]bootstrap[\\/]dist/
 		]
 
 	files:
+		javascripts:
+			joinTo: 'scripts/app.js'
+			
 		stylesheets:
 			joinTo: 'styles/app.css'
 
