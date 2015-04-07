@@ -25,8 +25,8 @@ Run `npm test` or `brunch watch -s` (which is what `npm test` calls) and then po
 Building
 --------
 
-Do the usual `npm install` and `bower install`, then on unixy systems run `npm run build`.  On windowsy systems you have to enter the command yourself because lessc changes the path separator if you're on windows, and it expects that separator only on windows.  Everywhere else it is an error to use the windows path separator.
+Do the usual `npm install` and `bower install`, then on unixy systems run `npm run build`.  On Windows systems, the build command should work as `lessc` tries to differentiate between a lone `:` and a `:\\` with drive letter.
 
-That build command is this: `node node_modules/less/bin/lessc --include-path="node_modules/bootstrap/less;src" src/bootstrap-hive13.less dist/bootstrap-hive13.css`
+If simply running `npm run build` doesn't work, try this: `node node_modules/less/bin/lessc --source-map --include-path="node_modules/bootstrap/less;src" src/bootstrap-hive13.less dist/bootstrap-hive13.css`
 
 This is the same as running `npm run build` except that the `:` is now a `;`.  Why?  That's a very good question.
