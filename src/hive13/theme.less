@@ -1,5 +1,13 @@
 // hive13-theme.less
 
+// This is meant to be used on items directly within a column.
+.col-xs-content-flush > * {
+	@media (max-width: @screen-xs-max) {
+		margin-left: (@grid-gutter-width / -2);
+		margin-right: (@grid-gutter-width / -2);
+	}
+}
+
 // The nav-bar doesn't have a specific font variable.
 .navbar {
 	font-family: @font-family-headline;
@@ -10,21 +18,55 @@
 }
 
 .jumbotron {
-	padding-top: 360px;
+	@media (max-width: @screen-xs-max) {
+		padding-top: 120px;
+		margin-bottom: 0;
+	}
+
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		padding-top: 220px;
+	}
+
+	@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+		padding-top: 300px;
+	}
+
+	@media (min-width: @screen-lg-min) {
+		padding-top: 360px;
+	}
 	
 	h1 {
 		font-weight: 900;
+	}
+
+	&.jumbotron-inverse {
+		color: white;
+		background-color: @gray-dark;
 	}
 }
 
 /**
  * Panel!
+ *
+ * Styles are made with the assumption that panels are always in a .col-*-# of some sort.
+ * The panel is used because Bootstrap has many convenience styles for content inside of panels.
  */
 
 .panel {
 	margin-bottom: @line-height-computed * 1.5;
 	.box-shadow(0 0 0 rgba(0,0,0,0));
 	border-width: 0 0 6px;
+
+	@media (max-width: @screen-xs-max) {
+		margin-bottom: 0;
+	}
+}
+
+.panel + .panel {
+	@media (max-width: @screen-xs-max) {
+		margin-top: -6px;
+		// border-width: 0;
+	}
 }
 
 .panel-title + .panel-title {
@@ -40,6 +82,46 @@ h4.panel-title {
 	font-family: @font-family-base;
 }
 
+.panel-body {
+	&.panel-body-content-flush {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.panel-body:not(.panel-body-content-flush) {
+	@media (max-width: @screen-xs-max) {
+		padding: @panel-heading-padding;
+	}
+}
+
+/**
+ * List Groups
+ */
+
+.list-group-item {
+	padding-left: 0;
+	padding-right: 0;
+	margin-bottom: -2px;
+	border-width: 2px 0;
+
+	.panel-body-content-flush & {
+		@media (max-width: @screen-xs-max) {
+			padding: @panel-heading-padding;
+		}
+	}
+
+	// .content-xs-flush & {
+	// 	padding: @panel-heading-padding;
+	// 	padding-top: 10px;
+	// 	padding-bottom: 10px;
+	// }
+}
+
+/**
+ * Footer
+ */
+
 footer {
 	padding: @grid-gutter-width (@grid-gutter-width / 2);
 	background: @brand-primary;
@@ -53,5 +135,21 @@ footer {
 		font-size: @font-size-small;
 		background: black;
 		color: white;
+	}
+}
+
+/**
+ * Misc
+ */
+
+.hive-event-list {
+	padding-left: 0;
+	margin-bottom: (@line-height-computed / 2);
+
+	> li {
+		display: block;
+
+		> * {
+		}
 	}
 }
