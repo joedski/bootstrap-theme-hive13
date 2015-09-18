@@ -21,6 +21,7 @@
   "dependencies": {
     "auto-reload-brunch": "^1.7.8",
     "brunch": "~1.7",
+    "handlebars-brunch": "^1.9.1",
     "javascript-brunch": ">= 1.0 < 1.8",
     "less-brunch": "git://github.com/joedski/less-brunch.git#1.8.2"
   },
