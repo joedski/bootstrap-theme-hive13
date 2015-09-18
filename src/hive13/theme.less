@@ -14,14 +14,14 @@
 }
 
 .navbar-brand img {
-        height: 50px;
+    height: 50px;
 }
 
 .navbar-nav li a {
-        // only make the navbar larger on larger screens
-        @media (min-width: @screen-sm-min) {
-                line-height: 50px;
-        }
+    // only make the navbar larger on larger screens
+    @media (min-width: @screen-sm-min) {
+        line-height: 50px;
+	}
 }
 
 .hiveStatus {
@@ -88,6 +88,28 @@
 	}
 }
 
+//////// Panel heading
+
+@panel-heading-icon-width: 42px;
+
+.panel-heading-with-icon( @img-url ) {
+	padding-left: (@panel-heading-padding-vertical * 1.67 + @panel-heading-icon-width);
+	background-image: ~"url(@{img-url})";
+	background-size: auto @panel-heading-icon-width;
+	background-position: left @panel-heading-padding-vertical center;
+	background-repeat: no-repeat;
+}
+
+.panel-heading {
+	.panel.panel-type-map & {
+		.panel-heading-with-icon("../images/icon-placemark-42@2x.png");
+	}
+
+	.panel.panel-type-events & {
+		.panel-heading-with-icon("../images/icon-calendar-42@2x.png");
+	}
+}
+
 .panel-title + .panel-title {
 	margin-top: @line-height-computed * 0.75;
 }
@@ -105,6 +127,13 @@ h4.panel-title {
 	&.panel-body-content-flush {
 		padding-top: 0;
 		padding-bottom: 0;
+
+		// Force inline-block items into blocks.
+		// Note sure if this should be child-only, or all descendents.
+		> img,
+		> iframe {
+			display: block;
+		}
 	}
 }
 
