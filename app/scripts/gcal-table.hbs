@@ -1,0 +1,22 @@
+<ul id="gcal-table" class="list-group">
+	{{#each eventsByDate}}
+	<li class="list-group-item">
+		<ul class="hive-event-list">
+			<h4>
+				{{#if startDate}}{{ startDate }}{{/if}}
+			</h4>
+
+			{{#each events}}
+			<li>
+				<span class="hive-event-time">{{ startTime }}</span>
+				{{! Do we have anything for if we don't have a summary? }}
+				{{#if summary }}
+				&ndash;
+				<a href="{{ htmlLink }}">{{ summary }}</a>
+				{{/if}}
+			</li>
+			{{/each}}
+		</ul>
+	</li>
+	{{/each}}
+</ul>

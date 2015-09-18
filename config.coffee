@@ -23,6 +23,9 @@ exports.config =
 		stylesheets:
 			joinTo: 'styles/app.css'
 
+		templates:
+			joinTo: 'scripts/app.js'
+
 	plugins:
 		less:
 			includePaths: packageConfig.options.less.paths
