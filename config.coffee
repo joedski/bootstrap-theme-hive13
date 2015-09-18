@@ -11,6 +11,7 @@ exports.config =
 
 		assets: [
 			/assets[\\/]/
+			/bower_components[\\/]bootstrap[\\/]dist[\\/]fonts/
 			# we're not even watching this yet...
 			# /bower_components[\\/]bootstrap[\\/]dist/
 		]

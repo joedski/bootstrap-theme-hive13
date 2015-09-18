@@ -13,6 +13,21 @@
 	font-family: @font-family-headline;
 }
 
+.navbar-brand img {
+        height: 50px;
+}
+
+.navbar-nav li a {
+        // only make the navbar larger on larger screens
+        @media (min-width: @screen-sm-min) {
+                line-height: 50px;
+        }
+}
+
+.hiveStatus {
+  height: 43px;
+}
+
 .body-with-navbar-fixed-top {
 	margin-top: @navbar-height;
 }
@@ -32,7 +47,7 @@
 	}
 
 	@media (min-width: @screen-lg-min) {
-		padding-top: 360px;
+		padding-top: 560px;
 	}
 	
 	h1 {
@@ -43,6 +58,10 @@
 		color: white;
 		background-color: @gray-dark;
 	}
+	background-image: url('/images/Jumbotron-Image.jpg');
+	background-size: cover;
+	background-position: 25% 75%;
+
 }
 
 /**
@@ -136,6 +155,11 @@ footer {
 		background: black;
 		color: white;
 	}
+}
+
+.idf-badge {
+        height: 175px;
+        margin: auto;
 }
 
 /**
