@@ -14,18 +14,33 @@
 }
 
 .navbar-brand img {
-    height: 50px;
-}
+	position: relative;
 
-.navbar-nav li a {
-    // only make the navbar larger on larger screens
-    @media (min-width: @screen-sm-min) {
-        line-height: 50px;
+	height: 50px;
+
+	@media (max-width: @screen-xs-max) {
+		height: 40px;
+		top: -10px;
 	}
 }
 
-.hiveStatus {
-  height: 43px;
+.navbar-nav li a {
+	// only make the navbar larger on larger screens
+	@media (min-width: @screen-sm-min) {
+		line-height: 50px;
+	}
+}
+
+//////// Hive Status
+
+.hive-status-status {
+	height: 50px;
+}
+
+.hive-status-text {
+	@media (min-width: @screen-sm-min) {
+		line-height: 50px;
+	}
 }
 
 .body-with-navbar-fixed-top {
@@ -187,8 +202,8 @@ footer {
 }
 
 .idf-badge {
-        height: 175px;
-        margin: auto;
+		height: 175px;
+		margin: auto;
 }
 
 /**
